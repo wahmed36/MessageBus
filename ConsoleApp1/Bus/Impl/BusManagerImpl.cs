@@ -93,7 +93,7 @@ namespace MessageBus.Impl
 
         public void Subscribe(Subscriber<t> subscriber, ApplicationInfo listenerApplication)
         {
-            if(subscriber.IsNull())
+            if(subscriber.IsNull() || listenerApplication.IsNull())
             {
                 throw new ArgumentNullException();
             }
@@ -103,10 +103,10 @@ namespace MessageBus.Impl
             responsiblity of the caller to ensure that double subscription doesnt happen
              */
 
-            if(!this.subscribers.ContainsKey(typeof(t).ToString()))
+            if(!this.subscribers.ContainsKey(typeof(t).FullName))
             {
                 MessageMonitor<t> messageMonitors = new MessageMonitor<t>(subscriber, listenerApplication);
-                this.subscribers.Add(typeof(t).ToString(), messageMonitors);
+                this.subscribers.Add(typeof(t).FullName, messageMonitors);
             }            
         }
     }    

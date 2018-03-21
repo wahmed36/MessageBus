@@ -52,8 +52,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBUtilTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConfigManagerTest.cs" />
+    <Compile Include="StorageManagerTest.cs" />
     <Compile Include="SupportedTypeTest.cs" />
     <Compile Include="LoggerTest.cs" />
   </ItemGroup>

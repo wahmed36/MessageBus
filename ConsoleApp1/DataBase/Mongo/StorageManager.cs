@@ -25,7 +25,7 @@ namespace MessageBus.DataBase.Mongo
         //List of all existing collections in MongoDB. This information will be used to create new collection or resuse existing one
 
         private List<string> CollectionNames = new List<string>();
-
+        const int CURSOR_MAX_WAIT_TIME = 5;
         public static StorageManager GetStorageManager()
         {   
             StorageManager storage = new StorageManager();
@@ -125,7 +125,7 @@ namespace MessageBus.DataBase.Mongo
         private FindOptions<BusMessage<t>> GetFindOptions<t>()
         {
             return new FindOptions<BusMessage<t>> {  CursorType = CursorType.Tailable,
-                MaxAwaitTime = TimeSpan.FromSeconds(5),
+                MaxAwaitTime = TimeSpan.FromSeconds(CURSOR_MAX_WAIT_TIME),
                 NoCursorTimeout =true};
         }
 
