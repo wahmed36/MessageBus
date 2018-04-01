@@ -29,9 +29,19 @@ namespace MessageBus.Config
         protected Type CreateType(string type)
         {
             Type result = Type.GetType(type);
-            object instance = Activator.CreateInstance(result);
-            //Type result = instance.GetType();
-            return result;
+            if (result != null) return result;
+
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                result = assembly.GetType(type);
+                if (result != null)
+                {
+                    object instance = Activator.CreateInstance(result);
+                    return result;
+                }                    
+            }
+            throw new ArgumentException(string.Format("{0} type not found in any any assembly",type));
+            
         }
 
         public static SupportedMessages GetInstance()
