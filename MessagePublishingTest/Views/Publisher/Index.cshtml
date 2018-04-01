@@ -1,0 +1,26 @@
+﻿@model  MessagePublishingTest.Events.FundsTransfer
+@{
+    ViewBag.Title = "Publisher1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Publisher</h2>
+
+@using (Html.BeginForm("PublishMessage", "Publisher", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.FromCustomerName)
+    @Html.TextBoxFor(m => m.FromCustomerName)
+
+    <br>
+    @Html.LabelFor(m=> m.Amount)
+    @Html.TextBoxFor(m=> m.Amount)
+
+    <br />
+    @Html.LabelFor(m=> m.ToCustomerName)
+    @Html.TextBoxFor(m=> m.ToCustomerName)
+
+    <br />
+    <input type="submit" />
+
+}

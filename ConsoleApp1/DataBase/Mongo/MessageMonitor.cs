@@ -47,6 +47,8 @@ namespace MessageBus.DataBase.Mongo
                     HandleError(ref storageManager, ref errorCounter, exception);
                 }
             }
+
+            Log.Logger.Debug(string.Format("{0} class is stopping monitoring due to persistent connection error",typeof(t).FullName));
         }
 
         private void HandleError(ref StorageManager storageManager, ref int errorCounter, Exception exception)
