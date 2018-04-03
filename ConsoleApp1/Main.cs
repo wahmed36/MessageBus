@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MessageBus.Config;
+using MessageBus.Interfaces;
 
 namespace MessageBus
 {
@@ -11,9 +12,7 @@ namespace MessageBus
     {
         static void Main(string[] args)
         {
-            string result= ConfigManager.GetMongoDBConnection();
-
-            Console.Write(result);
+            
         }
     }
 }
