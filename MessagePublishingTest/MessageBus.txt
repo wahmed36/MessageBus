@@ -14,3 +14,20 @@
 2018-04-01 13:47:36,019 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
 2018-04-01 13:48:21,946 DEBUG MessageBus.Log.Logger WebApp published a message on 4/1/2018 1:48:21 PM. Message = {"FromCustomerName":"Nadeem","ToCustomerName":"Waseem","Amount":2000.0,"TranssactionTime":"2018-04-01T13:48:21.9469821+03:00"}
 2018-04-01 13:48:21,952 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:32:50,517 DEBUG MessageBus.Log.Logger Bus manager initialized
+2018-04-03 13:32:51,602 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:32:51 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:32:50.279383+03:00"}
+2018-04-03 13:32:51,877 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:01,962 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:01 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:01.9614497+03:00"}
+2018-04-03 13:33:01,967 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:13,470 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:13 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:13.4700571+03:00"}
+2018-04-03 13:33:13,476 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:15,949 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:15 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:15.9496461+03:00"}
+2018-04-03 13:33:15,957 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:17,274 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:17 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:17.2741682+03:00"}
+2018-04-03 13:33:17,280 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:18,653 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:18 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:18.6538374+03:00"}
+2018-04-03 13:33:18,661 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:19,504 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:19 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:19.5040984+03:00"}
+2018-04-03 13:33:19,510 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}
+2018-04-03 13:33:46,758 DEBUG MessageBus.Log.Logger WebApp published a message on 4/3/2018 1:33:46 PM. Message = {"FromCustomerName":"test","ToCustomerName":"test2","Amount":11.0,"TranssactionTime":"2018-04-03T13:33:46.7585734+03:00"}
+2018-04-03 13:33:46,763 DEBUG MessageBus.Log.Logger {"Success":true,"ErrorCode":0,"ErrorMessage":"Message published successfully","ResponseObject":null}

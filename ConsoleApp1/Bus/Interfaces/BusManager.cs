@@ -12,7 +12,7 @@ namespace MessageBus.Interfaces
     /// <typeparam name="t"></typeparam>
     public interface BusManager<t>
     {        
-        Response SendMessage(t message, ApplicationInfo senderApplication);
+        Response SendMessage(t message, ApplicationInfo senderApplication, TimeSpan messageTTL = default(TimeSpan));
         void Subscribe(Subscriber<t> subscriber, ApplicationInfo listenerApplication);
     }
 }

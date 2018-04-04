@@ -60,9 +60,8 @@ namespace MessageBus.DataBase.Mongo
                 if (!storageManager.IsActive()) storageManager = StorageManager.GetStorageManager();
             }catch(Exception ex)
             {
-                Logger.Debug(ex.StackTrace);
-            }
-            
+                Logger.Error(storageManager,ex);
+            }            
         }
 
         private void MonitorQueue(IAsyncCursor<BusMessage<t>> cursor, StorageManager storageManager)
@@ -79,14 +78,27 @@ namespace MessageBus.DataBase.Mongo
         private void FireEvent(IAsyncCursor<BusMessage<t>> cursor, StorageManager storageManager)
         {
             List<BusMessage<t>> messages = cursor.Current.ToList();
+            FilterMessagesForTTL(messages);
             BusMessage<t> lastMessage = messages.LastOrDefault();
 
             if (lastMessage.IsNotNull())
             {
+
                 ProcessedMessageTrack track = DBUtil.ToMessageTrack(lastMessage._id, lastMessage.CreationTime, lastMessage.Message.GetType(), this.listenerApplication);
                 storageManager.SaveProcessedMessageTrack(track);
                 FireEvent(messages.Select(x => x.Message).ToList());
             }
+        }
+
+        private void FilterMessagesForTTL(List<BusMessage<t>> messages)
+        {
+            foreach(var message in messages)
+            {
+                if(message.TTL.IsNotNull() && message.TTL < DateTime.Now)
+                {
+                    messages.Remove(message);
+                }
+            }            
         }
 
         private void FireEvent(List<t> messages)
@@ -109,7 +121,7 @@ namespace MessageBus.DataBase.Mongo
             FilterDefinition<BusMessage<t>> filter = Builders<BusMessage<t>>.Filter.Where(x => x.SenderApplicationName != listenerApplication.ApplicationName); 
             var lastTrackFilter = Builders<BusMessage<t>>.Filter.Where(x => x._id > messageTrack.EventID);
             var sourceFilter = Builders<BusMessage<t>>.Filter.Where(x=> subscriber.InterestedInSources.Contains(x.SenderApplicationName));
-
+            
             if (messageTrack.IsNotNull())
             {
                 filter = Builders<BusMessage<t>>.Filter.And(new FilterDefinition<BusMessage<t>>[]{filter,lastTrackFilter });
