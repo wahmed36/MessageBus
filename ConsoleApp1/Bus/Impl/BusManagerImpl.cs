@@ -53,7 +53,7 @@ namespace MessageBus.Impl
         /// <typeparam name="t"></typeparam>
         /// <param name="message"></param>
         /// <param name="senderApplication"></param>
-        public Response SendMessage(t message, ApplicationInfo senderApplication)
+        public Response SendMessage(t message, ApplicationInfo senderApplication, TimeSpan messageTTL = default(TimeSpan))
         {
             Logger.Debug(string.Format("{0} published a message on {1}. Message = {2}",senderApplication.ApplicationName,DateTime.Now,message.ToJSON()));
             Response defaultResonse = DefaultResponse();
@@ -64,9 +64,8 @@ namespace MessageBus.Impl
                 return defaultResonse;
             }
 
-            if (storeManager.SaveMessage<t>(new BusMessage<t>(senderApplication.ApplicationName, message)))
+            if (storeManager.SaveMessage<t>(new BusMessage<t>(senderApplication.ApplicationName, message,messageTTL)))
             {
-
                 defaultResonse.Success = true;
                 defaultResonse.ErrorMessage = "Message published successfully";
                 defaultResonse.ErrorCode = 0;

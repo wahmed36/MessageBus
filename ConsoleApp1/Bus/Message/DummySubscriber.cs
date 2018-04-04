@@ -23,7 +23,7 @@ namespace MessageBus.Message
 
         public void OnEvent(t message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message.ToJSON());
         }
 
         public void OnEvents(List<t> messages)
