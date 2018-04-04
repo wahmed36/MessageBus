@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBus", "ConsoleApp1\MessageBus.csproj", "{C1EA8DCB-0A1B-4664-AFA4-E0DBA4D24A7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBus", "MessageBus\MessageBus.csproj", "{C1EA8DCB-0A1B-4664-AFA4-E0DBA4D24A7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBusTest", "MessageBusTest\MessageBusTest.csproj", "{932822B9-6EF7-46CF-B0A6-D38E14A5BC0F}"
 EndProject

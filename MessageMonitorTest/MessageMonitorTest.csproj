@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\MessageBus.csproj">
+    <ProjectReference Include="..\MessageBus\MessageBus.csproj">
       <Project>{c1ea8dcb-0a1b-4664-afa4-e0dba4d24a7c}</Project>
       <Name>MessageBus</Name>
     </ProjectReference>
