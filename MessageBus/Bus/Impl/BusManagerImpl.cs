@@ -97,12 +97,17 @@ namespace MessageBus.Impl
                 throw new ArgumentNullException();
             }
 
+            if(!SupportedMessages.GetInstance().IsTypeSupported(typeof(t)))
+            {
+                throw new ArgumentException("Type not supported by MessageBus");
+            }
+
             /**Here assumption is that only subscriber will exist one app context for one type of message.
             if double entry is tried that system will ignore the subscription attempt. It is the 
             responsiblity of the caller to ensure that double subscription doesnt happen
              */
 
-            if(!this.subscribers.ContainsKey(typeof(t).FullName))
+            if (!this.subscribers.ContainsKey(typeof(t).FullName))
             {
                 MessageMonitor<t> messageMonitors = new MessageMonitor<t>(subscriber, listenerApplication);
                 this.subscribers.Add(typeof(t).FullName, messageMonitors);
